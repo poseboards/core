@@ -29,15 +29,6 @@ app.use(require('express-session')({
 }));
 app.use(express.static(root));
 
-// Authentication Initialization
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Authentication Configuration
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
 var port = process.env.PORT || 3000;
 
 app.listen(port, function(){
