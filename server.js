@@ -9,6 +9,7 @@ var hbs            = require('./config/handlebars');
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger         = require('morgan');
+var usersRouter    = require('users-router');
 
 var app = express();
 
@@ -37,6 +38,9 @@ app.use(require('express-session')({
   saveUninitialized: false
 }));
 app.use(express.static(root));
+
+app.use('/users', usersRouter);
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
