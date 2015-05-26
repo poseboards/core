@@ -9,9 +9,9 @@ var hbs            = require('./config/handlebars');
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger         = require('morgan');
+var User           = require('./models/user');
 var usersRouter    = require('./routes/users-router');
 var sessionsRouter = require('./routes/sessions-router');
-var User           = require('./models/user');
 
 var app = express();
 
@@ -40,7 +40,6 @@ app.use(require('express-session')({
   saveUninitialized: false
 }));
 app.use(express.static(root));
-
 app.use(passport.initialize());
 app.use(passport.session());
 

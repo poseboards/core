@@ -26,7 +26,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
     if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
     user.comparePassword(password, function(err, isMatch) {
       if (err) return done(err);
-      if(isMatch) {
+      if (isMatch) {
         return done(null, user);
       } else {
         return done(null, false, { message: 'Invalid password' });
