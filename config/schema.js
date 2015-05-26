@@ -1,4 +1,4 @@
-var moongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 exports.user = function() {
   return new mongoose.Schema({
@@ -7,4 +7,8 @@ exports.user = function() {
     email    : {type: String, required: true, unique: true},
     username : {type: String, required: true, unique: true}
   });
+};
+
+exports.upload = function() {
+
 };
