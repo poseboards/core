@@ -10,6 +10,7 @@ var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger         = require('morgan');
 var usersRouter    = require('./routes/users-router');
+var sessionsRouter = require('./routes/sessions-router');
 var User           = require('./models/user');
 
 var app = express();
@@ -42,11 +43,9 @@ app.use(express.static(root));
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 app.use('/users', usersRouter);
+app.use('/sessions', sessionsRouter);
 
 
 var port = process.env.PORT || 3000;
