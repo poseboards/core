@@ -9,7 +9,7 @@ var hbs            = require('./config/handlebars');
 var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var logger         = require('morgan');
-var usersRouter    = require('users-router');
+var usersRouter    = require('./routes/users-router');
 
 var app = express();
 
