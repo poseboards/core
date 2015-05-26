@@ -46,9 +46,12 @@ exports.putUser = function(req, res) {
   }, function(err) {
       if (err) res.send(err);
       res.json({message: 'Your profile has been updated!'});
-  })
+  });
 };
 
 exports.deleteUser = function(req, res) {
-
+  Post.remove({_id: req.params.id}, function(err) {
+    if (err) res.send(err);
+    res.json({message: 'You no longer exist.'});
+  });
 };

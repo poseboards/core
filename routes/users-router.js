@@ -11,7 +11,7 @@ users.route('/')
 
 users.route('/:id')
   .get(UsersCtrl.getUser)
-  .put()
-  .delete();
+  .put(UsersCtrl.putUser)
+  .delete(UsersCtrl.deleteUser);
 
 module.exports = users;
