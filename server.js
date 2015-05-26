@@ -1,13 +1,14 @@
 var express        = require('express');
 var methodOverride = require('method-override');
-var logger         = require('morgan');
+var connect        = require('connect');
 var bodyParser     = require('body-parser');
 var cookieParser   = require('cookie-parser');
 var mongoose       = require('mongoose');
 var db             = require('./config/db')(mongoose);
-var passport       = require('passport');
 var hbs            = require('./config/handlebars');
+var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
+var logger         = require('morgan');
 
 var app = express();
 
