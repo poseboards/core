@@ -23,4 +23,9 @@ sessions.post('/', function(req, res, next) {
   })(req, res, next);
 });
 
+sessions.get('/logout', function(req, res) {
+  req.logout();
+  res.json({message: 'Thanks, see you soon.'});
+});
+
 module.exports = sessions;

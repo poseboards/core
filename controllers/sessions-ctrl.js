@@ -14,7 +14,7 @@ module.exports = function(passport) {
     }
     return fn(null, null);
   }
-}
+};
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
