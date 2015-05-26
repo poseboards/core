@@ -6,6 +6,7 @@ var cookieParser  = require('cookie-parser');
 var mongoose      = require('mongoose');
 var passport      = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var db = require('./config/db')(mongoose);
 
 var app = express();
 
@@ -30,7 +31,6 @@ app.use(require('express-session')({
 app.use(express.static(root));
 
 var port = process.env.PORT || 3000;
-
 app.listen(port, function(){
     console.log("Server is running on port: Andre Tré-th000usand");
 });

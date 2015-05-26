@@ -17,6 +17,7 @@
     "express-handlebars": "^2.0.1",
     "express-session": "^1.11.2",
     "handlebars": "^3.0.3",
+    "method-override": "^2.3.3",
     "mongodb": "^2.0.31",
     "mongoose": "^4.0.3",
     "morgan": "^1.5.3",
