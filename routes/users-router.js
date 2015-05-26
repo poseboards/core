@@ -7,10 +7,10 @@ var users = express.Router();
 
 users.route('/')
   .get(UsersCtrl.getUsers)
-  .post();
+  .post(UsersCtrl.postUsers);
 
 users.route('/:id')
-  .get()
+  .get(UsersCtrl.getUser)
   .put()
   .delete();
 

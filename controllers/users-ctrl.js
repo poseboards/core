@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
+var SessionsCtrl = require('../controllers/sessions-ctrl');
 
 exports.getUsers = function(req, res) {
   User.find(function(err, users) {
@@ -29,11 +30,23 @@ exports.postUsers = function(req, res) {
 };
 
 exports.getUser = function(req, res) {
-
+  User.findByUsername(req.params.username, function(err, user) {
+    if (err) res.send(err);
+    console.log(user);
+    res.json({user: user});
+  });
 };
 
 exports.putUser = function(req, res) {
-
+  User.update({_id: req.params.id}, {
+    name     : req.body.name,
+    username : req.body.username,
+    password : req.body.password,
+    email    : req.body.email
+  }, function(err) {
+      if (err) res.send(err);
+      res.json({message: 'Your profile has been updated!'});
+  })
 };
 
 exports.deleteUser = function(req, res) {
