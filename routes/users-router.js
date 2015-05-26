@@ -9,7 +9,7 @@ users.route('/')
   .get(UsersCtrl.getUsers)
   .post(UsersCtrl.postUsers);
 
-users.route('/:id')
+users.route('/:username')
   .get(UsersCtrl.getUser)
   .put(UsersCtrl.putUser)
   .delete(UsersCtrl.deleteUser);
