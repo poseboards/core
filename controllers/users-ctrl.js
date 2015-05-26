@@ -22,7 +22,7 @@ exports.postUsers = function(req, res) {
       if (err) {
         console.log(err);
       }
-      passpost.authenticate('local')(req, res, 
+      passport.authenticate('local')(req, res, 
         function() {
         res.json({message: 'Welcome to Poseboards'});
       });
