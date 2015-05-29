@@ -12,12 +12,12 @@ var UsersCtrl = require('../controllers/users-ctrl'),
 var users = express.Router();
 
 users.route('/')
-  .get(UsersCtrl.getUsers)
-  .post(UsersCtrl.postUsers);
+  .get(getUsers)
+  .post(postUsers);
 
 users.route('/:username')
-  .get(UsersCtrl.getUser)
-  .put(UsersCtrl.putUser)
-  .delete(UsersCtrl.deleteUser);
+  .get(getUser)
+  .put(putUser)
+  .delete(deleteUser);
 
 module.exports = users;
