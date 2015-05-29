@@ -12,7 +12,6 @@ var logger         = require('morgan');
 var User           = require('./models/user');
 var usersRouter    = require('./routes/users-router');
 var sessionsRouter = require('./routes/sessions-router');
-var uploader       = require('./config/multer');
 
 var app = express();
 

@@ -8,4 +8,4 @@ app.use(multer({
   rename: function (fieldname, filename) {
     return filename.replace(/\W+/g, '-').toLowerCase() + Date.now()
   }
-}))
+}));
