@@ -13,11 +13,12 @@ var User           = require('./models/user');
 var usersRouter    = require('./routes/users-router');
 var sessionsRouter = require('./routes/sessions-router');
 var uploadsRouter = require('./routes/uploads-router');
-
+var multer = require('multer');
 var app = express();
 
 var root = __dirname + '/public';
 var lib  = __dirname + '/lib';
+
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -41,6 +42,7 @@ app.use(require('express-session')({
   resave: false,
   saveUninitialized: false
 }));
+app.use(multer({dest: './files/'}));
 app.use(express.static(root));
 app.use(express.static(lib));
 app.use(passport.initialize());
