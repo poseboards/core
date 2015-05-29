@@ -12,6 +12,7 @@ var logger         = require('morgan');
 var User           = require('./models/user');
 var usersRouter    = require('./routes/users-router');
 var sessionsRouter = require('./routes/sessions-router');
+var uploader       = require('./config/multer');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(methodOverride(function(req, res){
     return method
   }
 }));
+app.use(multer({ dest: './uploads/'}))
 app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'DJ Django D\'jenkins',
