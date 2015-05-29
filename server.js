@@ -16,6 +16,7 @@ var sessionsRouter = require('./routes/sessions-router');
 var app = express();
 
 var root = __dirname + '/public';
+var lib = __dirname + '/lib';
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -40,6 +41,7 @@ app.use(require('express-session')({
   saveUninitialized: false
 }));
 app.use(express.static(root));
+app.use(express.static(lib));
 app.use(passport.initialize());
 app.use(passport.session());
 
