@@ -1,7 +1,7 @@
 var express = require('express');
-var multer = require('multer');
 
 var uploads = express.Router();
+
 
 
 uploads.get('/', function(req, res) {
@@ -9,13 +9,15 @@ uploads.get('/', function(req, res) {
 });
 
 uploads.post('/', function(req, res){
-    console.log(req.body); // form fields
-    console.log(req.files); // form files
-    res.status(204).end('Successfully uploaded!');
+    res.redirect('/animations/success');
 });
 
 uploads.get('/upload', function(req, res) {
-  res.render('uploads/new');
+  res.render('uploads/new', {message: 'Uploaded something!'});
+});
+
+uploads.get('/success', function(req, res) {
+  res.render('uploads/show', {message: '2589bfd53166ea3b5c46e55294a69dca.gif'});
 });
 
 module.exports = uploads;

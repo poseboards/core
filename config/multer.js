@@ -5,11 +5,6 @@ var app = express();
 
 module.exports = function(multer) {
 
-  app.use(multer({
-    dest: '../files/',
-    rename: function (fieldname, filename) {
-      return filename.replace(/\W+/g, '-').toLowerCase() + Date.now();
-    }
-  }));
+  app.use(multer({dest: './files/'}));
 
 };

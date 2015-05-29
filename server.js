@@ -18,6 +18,7 @@ var app = express();
 
 var root = __dirname + '/public';
 var lib  = __dirname + '/lib';
+var files  = __dirname + '/files';
 
 
 // Handlebars
@@ -45,6 +46,7 @@ app.use(require('express-session')({
 app.use(multer({dest: './files/'}));
 app.use(express.static(root));
 app.use(express.static(lib));
+app.use(express.static(files));
 app.use(passport.initialize());
 app.use(passport.session());
 
