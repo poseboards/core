@@ -16,7 +16,7 @@ var sessionsRouter = require('./routes/sessions-router');
 var app = express();
 
 var root = __dirname + '/public';
-var lib = __dirname + '/lib';
+var lib  = __dirname + '/lib';
 
 // Handlebars
 app.set('view engine', 'hbs');
