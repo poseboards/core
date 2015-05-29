@@ -1,0 +1,77 @@
+.user-header {
+	margin-top: 50px;
+	padding: 0;
+	background: url('http://evturn.com/assets/img/tile.png');
+	height: 280px;
+	background-size: cover;
+}
+
+.page-content {
+	margin-top: 20px;
+	.user-data {
+		text-align: left;
+		.img-avatar {
+			width: 240px;
+			z-index: 1;
+  		margin-top: -80px;
+  		border-radius: 6px;
+			@media(max-width: $screen-sm) {
+				width: 100px;
+			}
+		}
+		.user-title{
+			text-transform: uppercase;
+		}
+	}
+	.user-list {
+		background: $white;
+		border-radius: 2px;
+		padding: 0;
+		.user-list-title {
+			color: $primarydark;
+			text-transform: uppercase;
+			line-height: 2.5em;
+		}
+		.row.list-item {
+			height: 60px;
+			width: 100%;
+			margin: 0;
+			border-bottom: 1px solid $primarygray;
+			background: $white;	
+			.list-desc {
+			  height: 100%;
+				text-align: left;
+				cursor: pointer;
+				text-transform: uppercase;
+				.list-item-title {
+					color: $primarylight;
+					line-height: 2.5em;
+				}
+			}
+			.list-icon {
+				.fa {
+					font-size: 2.5em;
+				  padding: 10px;
+					color: $black50;
+					text-align: center;
+				}
+			}
+			.list-total {
+				height: 100%;
+				color: $primarygray;
+				display: inline-block;
+				.list-item-total {
+					float: left;
+					line-height: 2.5em;
+				}
+				i.fa {
+					float: right;
+				  font-size: 1.8em;
+	  			line-height: 2.5em;
+					color: $black10;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

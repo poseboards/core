@@ -8,7 +8,7 @@ exports.getUsers = function(req, res) {
   User.find(function(err, users) {
     if (err) res.send(err);
     console.log(users);
-    res.json({users: users});
+    res.render('users/index', {users: users});
   });
 };
 
@@ -33,7 +33,7 @@ exports.getUser = function(req, res) {
   User.findByUsername(req.params.username, function(err, user) {
     if (err) res.send(err);
     console.log(user);
-    res.json({user: user});
+    res.render('users/show', {user: user});
   });
 };
 

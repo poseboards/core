@@ -1,0 +1,79 @@
+h1 { font-size: 48px; color: white;}
+h2 { font-size: 32px; }
+h3 { font-size: 27px; }
+h4 { font-size: 22px; }
+h5 { font-size: 18px; }
+h6 { font-size: 14px; }
+
+.text-layer {
+  padding-top: 180px;
+}
+
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar-inverse {
+  background-color: $black;
+  .navbar-brand {
+    color: $white;
+    &:hover {
+      color: $mint;
+    }
+    .navbar-img {
+      width: 25px;
+    }
+  }
+
+  .navbar-nav > li > a {
+    color: $white;
+    &:hover {
+      color: $mint;
+    }
+  }
+}
+
+
+.tab-title {
+  font-weight: 500;
+	line-height: 1.1;
+	padding-top: 115px;
+	text-align: center;
+}
+
+.app-title {
+  font-weight: 100;
+  color: $white;
+  font-size: 500%;
+  margin-top: 280px;
+}
+
+.yelp {
+  text-align: center;
+}
+
+.list-group-row {
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  .list-group {
+    padding: 0;
+    .list-group-item {
+      width: 225px;
+      position: relative;
+      .list-item-option {
+        position: absolute;
+        top: 35px;
+        right: 7px;
+      }
+    }
+  }
+}
+
+ol.added-results li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  width: 95%;
+}
