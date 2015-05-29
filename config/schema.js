@@ -6,7 +6,7 @@ exports.user = function() {
     password    : {type: String, required: true},
     email       : {type: String, required: true, unique: true},
     username    : {type: String, required: true, unique: true},
-    uploads     : []
+    uploads     : [Uploads]
   });
 };
 
@@ -20,6 +20,6 @@ exports.upload = function() {
     height      : {type: Number, required: true},
     fps         : {type: Number, required: true},
     createdAt   : {type: Date, default: Date.now},
-    captions    : []
+    captions    : [Captions]
   });
 };
