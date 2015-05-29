@@ -12,6 +12,7 @@ var logger         = require('morgan');
 var User           = require('./models/user');
 var usersRouter    = require('./routes/users-router');
 var sessionsRouter = require('./routes/sessions-router');
+var uploadsRouter = require('./routes/uploads-router');
 
 var app = express();
 
@@ -34,7 +35,6 @@ app.use(methodOverride(function(req, res){
     return method
   }
 }));
-app.use(multer({ dest: './uploads/'}))
 app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'DJ Django D\'jenkins',
@@ -48,6 +48,7 @@ app.use(passport.session());
 
 app.use('/users', usersRouter);
 app.use('/sessions', sessionsRouter);
+app.use('/animations', uploadsRouter);
 
 
 var port = process.env.PORT || 3000;
