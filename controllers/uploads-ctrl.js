@@ -27,3 +27,14 @@ exports.postUploads = function(req, res) {
     res.redirect('/animations');
   });
 };
+
+exports.getUpload = function(req, res) {
+  var query = Upload.where({ _id: req.params.id });
+  query.findOne(function(err, upload) {
+    if (err) res.send(err);
+    if (upload) {
+      console.log(upload);
+      res.render('uploads/show', {upload: upload});
+    }
+  });
+}
