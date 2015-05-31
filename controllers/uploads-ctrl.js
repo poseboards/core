@@ -1,6 +1,7 @@
 var express = require('express');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var Upload = require('../models/upload');
 
 exports.getUploads = function(req, res) {
   Uploads.find(function(err, uploads) {
@@ -12,17 +13,13 @@ exports.getUploads = function(req, res) {
 
 exports.postUploads = function(req, res) {
   Upload.create(new Upload({
-    title       : req.body.title,
-    binary      : req.body.binary,
-    description : req.body.description,
-    category    : req.body.category,
-    width       : req.body.width,
-    height      : req.body.height,
-    fps         : req.body.fps
-  }), req.body.password, function(err, user) {
+    title     : req.body.title,
+    filename  : req.body.dougs
+  }), function(err, upload) {
       if (err) {
         res.send(err);
+        console.log(upload);
       }
-      res.json({message: 'Animation successfully uploaded!'});
+      res.redirect('/animations/success')
   });
 };

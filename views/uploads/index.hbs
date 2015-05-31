@@ -18,12 +18,14 @@
             </tr>
           </thead>
           <tbody>
+            {{#each uploads}}
             <tr>
-              <td><a href = "/gen">Pig Walking</a></td>
-              <td><a href = "/filter">Animals</a></td>
+              <td><a href = "/gen">{{this.title}}</a></td>
+              <td><a href = "/filter"><img src="../{{this.filename}}"></a></td>
               <td><a href = "#">@jdoubleua</a></td>
               <td>301+</td>
             </tr>
+            {{/each}}
             <tr>
               <td><a href = "/gen">Robot Running</a></td>
               <td><a href = "/filter">Misc.</a></td>

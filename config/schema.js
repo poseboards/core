@@ -13,13 +13,7 @@ exports.user = function() {
 exports.upload = function() {
   return new mongoose.Schema({
     title       : {type: String, required: true},
-    binary      : {type: String, required: true},
-    description : {type: String, required: true},
-    category    : {type: String, required: true},
-    width       : {type: Number, required: true},
-    height      : {type: Number, required: true},
-    fps         : {type: Number, required: true},
-    createdAt   : {type: Date, default: Date.now},
-    captions    : []
+    filename    : {type: String, required: true},
+    createdAt   : {type: Date, default: Date.now}
   });
 };
