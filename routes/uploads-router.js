@@ -12,11 +12,11 @@ uploads.post('/', function(req, res){
 });
 
 uploads.get('/upload', function(req, res) {
-  res.render('uploads/new', {message: 'Uploade something!'});
+  res.render('uploads/new', {message: 'Upload something!'});
 });
 
 uploads.get('/success', function(req, res) {
-  res.render('uploads/show', {message: '2589bfd53166ea3b5c46e55294a69dca.gif'});
+  res.render('uploads/show', {message: 'Successfully uploaded!'});
 });
 
 module.exports = uploads;
