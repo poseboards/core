@@ -44,7 +44,20 @@ app.use(methodOverride(function(req, res){
     return method
   }
 }));
-app.use(multer({dest: './files/'}));
+app.use(multer({dest: './files/',
+  rename: function(fieldname, filename) {
+     return filename+Date.now();
+  }, 
+  onFileUploadStart: function(file) {
+    console.log(file);
+    console.log(file.originalname + ' is starting ...')
+  },
+  onFileUploadComplete: function(file) {
+    console.log(file.fieldname + ' uploaded to  ' + file.path)
+    done = true;
+  }
+}));
+
 app.use(express.static(root));
 app.use(express.static(lib));
 app.use(express.static(files));

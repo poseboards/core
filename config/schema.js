@@ -12,8 +12,8 @@ exports.user = function() {
 
 exports.upload = function() {
   return new mongoose.Schema({
-    title       : {type: String, required: true},
-    filename    : {type: String, required: true},
+    title       : {type: String},
+    filename    : {type: String},
     createdAt   : {type: Date, default: Date.now}
   });
 };

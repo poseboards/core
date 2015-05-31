@@ -13,6 +13,7 @@ exports.getUsers = function(req, res) {
 };
 
 exports.postUsers = function(req, res) {
+  console.log(req)
   User.register(new User({
     name     : req.body.name,
     username : req.body.username,
