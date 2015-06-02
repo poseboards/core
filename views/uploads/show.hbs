@@ -1,10 +1,10 @@
 <section id="pb-generatedPage">
   <div class="container container-main">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-6 text-center">
         <h1>{{upload.title}}</h1>
         <canvas id="uploadedAnimation" width="500" height="500" style="border:3.5px solid #bfbfbf;">
-          <img src="../{{upload.filename}}">
+         
         </canvas>
       </div>
       <div class="col-lg-6">
@@ -16,19 +16,15 @@
         <button type="button" class="btn btn-warning" id="prevFrame">Previous</button>
         <button type="button" class="btn btn-warning" id="nextFrame">Next</button>
       </div>
-      <div class="social">
-        <h2>Social Links</h2>
-        <h4>Facebook</h4>
-        <h4>Twitter</h4>
-        <h4>Instagram</h4>
-        <h4>LinkedIn</h4>
+      <div col-lg-6>
+        <img src="../{{upload.filename}}">
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 text-center">
       <h3>{{upload.title}}</h3>
-      <img src="../{{upload.filename}}">
+      
       <h2>Comments:</h2>
       <input class="form-group input-comment" type="text" placeholder=" Write Comment..."/>
       <button type="button" class="btn btn-group btn-lg btn-primary submit-button">Submit</button>
@@ -69,3 +65,17 @@
     </div>
   </div>
 </section>
+
+<script src="../../assets/js/lib/jquery.js"></script>
+<script src="../../assets/animation.js"></script>
+<script src="../../assets/board.js"></script>
+
+<script>
+  var canvas = document.getElementById("uploadedAnimation");
+  var ctx = canvas.getContext("2d"); 
+  var fps = (1000 / 10); 
+  var image = new Image(); 
+  image.src = '../{{upload.filename}}'; 
+  var a = new Animation(100, 100, ctx, image, 4, fps); 
+  a.start();
+</script>
