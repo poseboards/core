@@ -18,6 +18,22 @@
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <div class="row">
+                <form class="form-horizontal" method="post" action="/animations" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <input type="file" name="dougs" accept="image/*" class="btn btn-info">
+                  </div>
+                  <div class="form-group container-main">
+                    <label>Animation Name</label>
+                    <input class="form-control " name="title" id="upload-name" type="text">
+                  </div>
+                  <div class="form-group">
+                    <input class="btn btn-primary" type="submit">
+                  </div>
+                </form>
+              </div>
+            </tr>
             {{#each uploads}}
             <tr>
               <td><a href = "/gen">{{this.title}}</a></td>

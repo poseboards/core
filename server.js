@@ -69,6 +69,10 @@ app.use('/sessions', sessionsRouter);
 app.use('/animations', uploadsRouter);
 
 
+app.get('/animations/upload', function(req, res) {
+  res.render('uploads/new', {message: 'Upload something!'});
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
     console.log("Server is running on port: Andre Tré-th000usand");

@@ -3,7 +3,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var Upload = require('../models/upload');
 var multer = require('multer');
-var Board = require('../lib/assets/board');
 
 exports.getUploads = function(req, res) {
   Upload.find(function(err, uploads) {
@@ -33,8 +32,11 @@ exports.getUpload = function(req, res) {
     if (err) res.send(err);
     if (upload) {
       console.log(upload);
-      Board.giveMe(upload.filename);
       res.render('uploads/show', {upload: upload});
     }
   });
+}
+
+exports.newUpload = function(req, res) {
+  res.render('uploads/new', {message: 'Upload something!'});
 }
