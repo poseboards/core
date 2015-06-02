@@ -35,8 +35,4 @@ exports.getUpload = function(req, res) {
       res.render('uploads/show', {upload: upload});
     }
   });
-}
-
-exports.newUpload = function(req, res) {
-  res.render('uploads/new', {message: 'Upload something!'});
-}
+};

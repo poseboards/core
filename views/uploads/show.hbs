@@ -3,8 +3,7 @@
     <div class="row">
       <div class="col-lg-6 text-center">
         <h1>{{upload.title}}</h1>
-        <canvas id="uploadedAnimation" width="500" height="500" style="border:3.5px solid #bfbfbf;">
-         
+        <canvas id="uploadedAnimation" width="100" height="100" style="border:3.5px solid #bfbfbf;">
         </canvas>
       </div>
       <div class="col-lg-6">
@@ -24,7 +23,6 @@
   <div class="row">
     <div class="col-lg-6 text-center">
       <h3>{{upload.title}}</h3>
-      
       <h2>Comments:</h2>
       <input class="form-group input-comment" type="text" placeholder=" Write Comment..."/>
       <button type="button" class="btn btn-group btn-lg btn-primary submit-button">Submit</button>
@@ -69,7 +67,6 @@
 <script src="../../assets/js/lib/jquery.js"></script>
 <script src="../../assets/animation.js"></script>
 <script src="../../assets/board.js"></script>
-
 <script>
   var canvas = document.getElementById("uploadedAnimation");
   var ctx = canvas.getContext("2d"); 
